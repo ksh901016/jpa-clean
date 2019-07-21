@@ -5,6 +5,6 @@ import com.nhn.corn.jpaclean.acl.entity.AclKey;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
-public interface AclRepository extends JpaRepository<Acl, AclKey>, QuerydslPredicateExecutor<Acl> {
+public interface AclRepository extends JpaRepository<Acl, AclKey>, QuerydslPredicateExecutor<Acl>, AclRepositoryCustom {
 
 }

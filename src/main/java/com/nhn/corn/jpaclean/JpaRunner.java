@@ -18,6 +18,24 @@ public class JpaRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        Acl newAcl = insertAclData();
+        System.out.println("=============");
+        System.out.println(repository.findAllByAclCondition(newAcl));
+        System.out.println("=============");
+    }
+
+    public Acl insertAclData(){
+        AclKey key = new AclKey("1.1.1.1", "code1", "company1");
+        Acl acl = new Acl();
+        acl.setKey(key);
+        acl.setName("name");
+        repository.save(acl);
+        return acl;
+    }
+
+    /* queryDSL
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
         AclKey aclKey = new AclKey("1.1.1.","cod1", "company1");
         Acl acl = new Acl();
         acl.setKey(aclKey);
@@ -35,5 +53,5 @@ public class JpaRunner implements ApplicationRunner {
         System.out.println("========search=======");
         System.out.println(repository.findAll(AclPredicate.search(condition)));
         System.out.println("========search=======");
-    }
+    }*/
 }
