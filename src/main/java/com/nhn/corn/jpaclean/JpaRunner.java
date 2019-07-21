@@ -2,26 +2,32 @@ package com.nhn.corn.jpaclean;
 
 import com.nhn.corn.jpaclean.acl.entity.Acl;
 import com.nhn.corn.jpaclean.acl.entity.AclKey;
-import com.nhn.corn.jpaclean.acl.repository.AclRepository;
-import com.nhn.corn.jpaclean.acl.repository.predicate.AclPredicate;
-import org.hibernate.service.spi.InjectService;
+import com.nhn.corn.jpaclean.acl.repository.specification.AclCondition;
+import com.nhn.corn.jpaclean.acl.repository.specification.repository.SpecifiAclRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
+import static org.springframework.data.jpa.domain.Specification.where;
+
 @Component
 public class JpaRunner implements ApplicationRunner {
 
     @Autowired
-    AclRepository repository;
+    SpecifiAclRepository repository;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
         Acl newAcl = insertAclData();
-        System.out.println("=============");
-        System.out.println(repository.findAllByAclCondition(newAcl));
-        System.out.println("=============");
+        List<Acl> resultList = repository.findAll(where(AclCondition.hasIp("1.1.1.1"))
+                .and(AclCondition.hasCompanyId("company1")));
+
+        System.out.println("===========");
+        System.out.println(resultList);
+        System.out.println("===========");
     }
 
     public Acl insertAclData(){

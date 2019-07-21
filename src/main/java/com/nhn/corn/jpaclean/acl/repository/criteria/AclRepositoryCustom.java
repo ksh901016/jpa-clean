@@ -1,4 +1,4 @@
-package com.nhn.corn.jpaclean.acl.repository;
+package com.nhn.corn.jpaclean.acl.repository.criteria;
 
 import com.nhn.corn.jpaclean.acl.entity.Acl;
 

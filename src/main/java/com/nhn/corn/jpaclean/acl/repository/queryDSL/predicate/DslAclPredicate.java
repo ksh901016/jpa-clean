@@ -1,11 +1,11 @@
-package com.nhn.corn.jpaclean.acl.repository.predicate;
+package com.nhn.corn.jpaclean.acl.repository.queryDSL.predicate;
 
 import com.nhn.corn.jpaclean.acl.entity.Acl;
 import com.nhn.corn.jpaclean.acl.entity.QAcl;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.Predicate;
 
-public class AclPredicate {
+public class DslAclPredicate {
     public static Predicate search(Acl condition){
         QAcl acl = QAcl.acl;
 

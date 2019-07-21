@@ -1,8 +1,7 @@
-package com.nhn.corn.jpaclean.acl.repository;
+package com.nhn.corn.jpaclean.acl.repository.criteria;
 
 import com.nhn.corn.jpaclean.acl.entity.Acl;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.servlet.view.script.ScriptTemplateViewResolver;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

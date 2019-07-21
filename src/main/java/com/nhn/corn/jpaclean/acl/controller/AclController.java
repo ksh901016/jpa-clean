@@ -1,7 +1,7 @@
 package com.nhn.corn.jpaclean.acl.controller;
 
 import com.nhn.corn.jpaclean.acl.entity.Acl;
-import com.nhn.corn.jpaclean.acl.repository.AclRepository;
+import com.nhn.corn.jpaclean.acl.repository.queryDSL.repository.AclRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
