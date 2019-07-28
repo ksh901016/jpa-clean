@@ -1,5 +1,5 @@
 package com.nhn.corn.jpaclean.acl.repository.queryDSL.predicate;
-
+/*
 import com.nhn.corn.jpaclean.acl.entity.Acl;
 import com.nhn.corn.jpaclean.acl.entity.QAcl;
 import com.querydsl.core.BooleanBuilder;
@@ -18,4 +18,4 @@ public class DslAclPredicate {
         }
         return builder;
     }
-}
+}*/

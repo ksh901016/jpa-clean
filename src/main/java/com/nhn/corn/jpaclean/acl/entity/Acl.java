@@ -3,10 +3,10 @@ package com.nhn.corn.jpaclean.acl.entity;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -16,6 +16,10 @@ public class Acl {
 
     @EmbeddedId
     private AclKey key;
+
+    @ManyToOne
+    private Company company;
+
     private String IpDescription;
     private String name;
     private String age;
